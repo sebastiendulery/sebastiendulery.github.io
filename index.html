@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>CV – Sébastien Duléry – DSI</title>
+
+<style>
+/* --- VARIABLES --- */
+:root {
+  --sidebar-bg: #2e3131;
+  --sidebar-text: #ffffff;
+  --main-bg: #ffffff;
+  --text: #2c3e50;
+  --accent: #d35400;
+  --light-gray: #f4f4f4;
+}
+
+* { box-sizing: border-box; }
+
+/* --- CONFIGURATION GLOBALE --- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  /* Légère réduction globale pour assurer le coup (9.6pt) */
+  font-size: 9.6pt; 
+  line-height: 1.35;
+  color: var(--text);
+  background-color: #525659;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 30px 0;
+}
+
+/* LE CONTENEUR A4 */
+.cv-container {
+  display: grid;
+  grid-template-columns: 7.2cm 1fr;
+  width: 21cm;
+  /* On fixe une hauteur min pour l'écran */
+  min-height: 29.7cm;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* --- COLONNE GAUCHE (SIDEBAR) --- */
+aside {
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  /* Marges réduites : 1cm verticalement */
+  padding: 1cm 0.8cm;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+aside h1 {
+  font-size: 1.7rem;
+  margin: 0 0 0.2rem 0;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+aside .target-role {
+  font-size: 0.95rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+aside section h2 {
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 0.2rem;
+  margin: 0 0 0.4rem 0;
+  font-weight: 700;
+}
+
+aside ul { list-style: none; padding: 0; margin: 0; }
+aside li { margin-bottom: 0.3rem; font-size: 0.9rem; opacity: 0.95; }
+
+/* Bloc Formation */
+.education-item { margin-bottom: 0.6rem; }
+.education-item strong { color: white; display: block; font-weight: 600; font-size: 0.95rem; }
+.education-item span { font-size: 0.85rem; opacity: 0.8; font-style: italic; }
+
+aside .contact-info div {
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* --- COLONNE DROITE (MAIN) --- */
+main {
+  /* Marges verticales réduites à 0.8cm pour gagner l'espace critique */
+  padding: 0.8cm 1.5cm 0.8cm 1.2cm;
+  background: var(--main-bg);
+}
+
+main h2 {
+  font-size: 1.3rem;
+  color: var(--sidebar-bg);
+  margin: 0.8rem 0 0.5rem 0;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.1rem;
+  display: inline-block;
+}
+main h2:first-of-type { margin-top: 0; }
+
+.summary {
+  background: var(--light-gray);
+  padding: 0.6rem 0.8rem;
+  border-left: 4px solid var(--accent);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1rem;
+  text-align: justify;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Compactage des jobs */
+.job { margin-bottom: 0.8rem; }
+.job:last-child { margin-bottom: 0; }
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.1rem;
+}
+
+.job h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: var(--sidebar-bg);
+  font-weight: 700;
+}
+
+/* Optimisation : Dates plus petites */
+.job .period {
+  font-size: 0.85rem; 
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.job .company {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0.2rem;
+}
+
+.job .desc {
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+  font-style: italic;
+  color: #666;
+}
+
+ul.achievements { list-style: none; padding: 0; margin: 0; }
+ul.achievements li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.15rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+ul.achievements li::before {
+  content: "•";
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.highlight-box {
+  background: rgba(230, 126, 34, 0.08);
+  border-left: 3px solid var(--accent);
+  padding: 0.5rem;
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.highlight-box strong { color: var(--accent); }
+
+/* --- OPTIMISATION IMPRESSION --- */
+@media print {
+  @page { margin: 0; size: A4; }
+  
+  body {
+    background: white !important; /* Force le blanc pour éviter la ligne grise */
+    padding: 0;
+    margin: 0;
+    display: block;
+  }
+
+  .cv-container {
+    width: 21cm;
+    /* On force 29.6cm pour laisser une marge de sécurité au navigateur */
+    height: 29.6cm; 
+    box-shadow: none;
+    display: grid;
+    margin: 0;
+    border: none;
+    overflow: hidden; /* Coupe ce qui dépasse */
+  }
+  
+  /* Sécurité anti-coupure */
+  .job, aside section, .highlight-box { page-break-inside: avoid; }
+  
+  /* Cache tout sauf le CV */
+  body > *:not(.cv-container) { display: none; }
+}
+
+/* --- MOBILE RULES --- */
+@media screen and (max-width: 800px) {
+  .cv-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+  aside, main { width: 100%; height: auto; padding: 1.5rem; }
+}
+</style>
+</head>
+
+<body>
+<div class="cv-container">
+
+  <!-- COLONNE GAUCHE -->
+  <aside>
+    <!-- Header Identité -->
+    <div>
+      <h1>Sébastien DULÉRY</h1>
+      <div class="target-role">Directeur des Systèmes d'Information</div>
+    </div>
+
+    <!-- Contact -->
+    <section class="contact-info">
+      <div>📍 La Crèche (79)</div>
+      <div>📧 sebastien.dulery@free.fr</div>
+      <div>📱 06 50 37 57 41</div>
+      <div>🌐 LinkedIn</div>
+    </section>
+
+    <!-- FORMATION -->
+    <section>
+      <h2>Formation Académique</h2>
+      <div class="education-item">
+        <strong>Mastère Spécialisé</strong>
+        <span>Ingénierie des Processus de Production<br>ENS Mines Paris / Cachan</span>
+      </div>
+      <div class="education-item">
+        <strong>Ingénieur Informatique</strong>
+        <span>3iL Limoges</span>
+      </div>
+      <div class="education-item">
+        <strong>Analyste</strong>
+        <span>IRA de Lille</span>
+      </div>
+    </section>
+
+    <!-- Expertise Stratégique -->
+    <section>
+      <h2>Gouvernance & Stratégie</h2>
+      <ul>
+        <li>Alignement stratégique SI</li>
+        <li>Pilotage budgétaire & RH</li>
+        <li>Conduite du changement</li>
+        <li>Innovation & IA Publique</li>
+        <li>Gestion de crise</li>
+      </ul>
+    </section>
+
+    <!-- Expertise Technique -->
+    <section>
+      <h2>Expertise Technique</h2>
+      <ul>
+        <li>Infrastructures Critiques</li>
+        <li>Cloud Privé / Virtualisation</li>
+        <li>Stockage (SAN) & PRA</li>
+        <li>Réseaux & Sécurité</li>
+        <li>IA Générative (RAG, LLM)</li>
+      </ul>
+    </section>
+
+    <!-- Certifs & Langues -->
+    <section>
+      <h2>Certifications & Langues</h2>
+      <ul>
+        <li>ITIL v3 Foundation</li>
+        <li>Google Prompting Essentials</li>
+        <li style="margin-top:0.5rem">🇬🇧 Anglais Tech (Courant)</li>
+        <li>🇩🇪 Allemand (Scolaire)</li>
+      </ul>
+    </section>
+  </aside>
+
+  <!-- COLONNE DROITE -->
+  <main>
+    <!-- Résumé -->
+    <div class="summary">
+      Cadre supérieur du numérique (Ingénieur Mines/Cachan) avec 20 ans d’expérience. Expert dans la transformation des organisations, la gestion d'infrastructures critiques (Datacenters Ministériels) et le pilotage d'équipes transverses. Je combine vision stratégique et innovation (IA) pour aligner le SI sur les enjeux de l'action publique.
+    </div>
+
+    <h2>Expérience Professionnelle</h2>
+
+    <!-- JOB 1 -->
+    <div class="job">
+      <div class="job-header">
+        <h3>Responsable Pôle Numérique & Proximité</h3>
+        <span class="period">Depuis 2021</span>
+      </div>
+      <div class="company">SGCD des Deux-Sèvres | Niort</div>
+      <ul class="achievements">
+        <li><strong>Direction :</strong> Management de 9 agents. Support de <strong>500 utilisateurs</strong> sur <strong>12 sites</strong>.</li>
+        <li><strong>Innovation IA :</strong> Pilotage de l'acculturation (100+ agents formés) et conception d'assistants intelligents (Alignement feuille de route MI).</li>
+        <li><strong>Stratégie :</strong> Fusion des processus IT (OTE) et sécurisation du SI départemental.</li>
+      </ul>
+    </div>
+
+    <!-- JOB 2 -->
+    <div class="job">
+      <div class="job-header">
+        <h3>Chef du SIDSIC 79</h3>
+        <span class="period">2018 – 2020</span>
+      </div>
+      <div class="company">Préfecture des Deux-Sèvres | Niort</div>
+      <ul class="achievements">
+        <li><strong>Management :</strong> Encadrement de 12 agents (Tech & Admin).</li>
+        <li><strong>Projets :</strong> Pilotage de la téléphonie (TOIP) et modernisation de l'accueil.</li>
+        <li><strong>Continuité :</strong> Gestion de crise et maintien des services critiques de l'État.</li>
+      </ul>
+    </div>
+
+    <!-- JOB 3 -->
+    <div class="job">
+      <div class="job-header">
+        <h3>Architecte Infrastructures Critiques</h3>
+        <span class="period">2015 – 2018</span>
+      </div>
+      <div class="company">Ministère de l’Agriculture | Toulouse</div>
+      <div class="desc">Administration d'environnements Datacenter haute criticité.</div>
+      <ul class="achievements">
+        <li><strong>Haute Dispo :</strong> Gestion de <strong>2 Po de stockage</strong> (Hitachi GAD) et 66 hyperviseurs.</li>
+        <li><strong>Réseau :</strong> Architecture Est-Ouest, segmentation (Fortigate, Brocade).</li>
+        <li><strong>Résilience :</strong> Mise en œuvre de PRA/PCA sur infrastructures complexes.</li>
+      </ul>
+    </div>
+
+    <!-- JOB 4 -->
+    <div class="job">
+      <div class="job-header">
+        <h3>Responsable SI & Chef de Projet</h3>
+        <span class="period">2005 – 2015</span>
+      </div>
+      <div class="company">DAF Guyane / DRAAF Limousin</div>
+      <ul class="achievements">
+        <li>Management des SI régionaux (100 agents) et coordination inter-services.</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>Missions de Direction Générale (Guyane) :</strong><br>
+        • <strong>Intérim Secrétaire Général :</strong> Pilotage RH, Budget, Logistique (6 mois).<br>
+        • <strong>Direction de Travaux :</strong> Chef de projet rénovation immobilière (1,6 M€).
+      </div>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>
