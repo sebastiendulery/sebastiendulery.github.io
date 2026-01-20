@@ -231,6 +231,8 @@ ul.achievements li::before {
   
   /* Cache tout sauf le CV */
   body > *:not(.cv-container) { display: none; }
+  /* LA NOUVELLE RÈGLE MAGIQUE */
+  .no-print { display: none !important; }
 }
 
 /* --- MOBILE RULES --- */
@@ -266,8 +268,8 @@ ul.achievements li::before {
     </section>
 
     <!-- Bouton Téléchargement -->
-    <div style="margin-top: 1rem; text-align: center;">
-      <a href="CV_Sebastien_Dulery_DSI.pdf" target="_blank" style="
+      <div class="no-print" style="margin-top: 1rem; text-align: center;">
+        <a href="CV_Sebastien_Dulery_DSI.pdf" target="_blank" style="
         display: inline-block;
         background: white;
         color: var(--sidebar-bg);
