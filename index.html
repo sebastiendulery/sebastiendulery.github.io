@@ -29,7 +29,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-  /* Légère réduction globale pour assurer le coup (9.6pt) */
   font-size: 9.6pt; 
   line-height: 1.35;
   color: var(--text);
@@ -45,7 +44,6 @@ body {
   display: grid;
   grid-template-columns: 7.2cm 1fr;
   width: 21cm;
-  /* On fixe une hauteur min pour l'écran */
   min-height: 29.7cm;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
@@ -55,14 +53,24 @@ body {
 aside {
   background: var(--sidebar-bg);
   color: var(--sidebar-text);
-  /* Marges réduites : 1cm verticalement */
-  padding: 1cm 0.8cm;
+  /* RÉDUCTION ICI : on passe à 0.8cm en haut et bas */
+  padding: 0.8cm 0.8cm;
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  /* RÉDUCTION ICI : on resserre les blocs */
+  gap: 1rem;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
+
+/* Liens sidebar */
+aside a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  transition: color 0.2s;
+}
+aside a:hover { color: var(--accent); }
 
 aside h1 {
   font-size: 1.7rem;
@@ -84,49 +92,37 @@ aside section h2 {
   color: var(--accent);
   text-transform: uppercase;
   border-bottom: 1px solid rgba(255,255,255,0.2);
-  padding-bottom: 0.2rem;
-  margin: 0 0 0.4rem 0;
+  padding-bottom: 0.15rem;
+  margin: 0 0 0.3rem 0;
   font-weight: 700;
 }
 
 aside ul { list-style: none; padding: 0; margin: 0; }
-aside li { margin-bottom: 0.3rem; font-size: 0.9rem; opacity: 0.95; }
+aside li { margin-bottom: 0.25rem; font-size: 0.9rem; opacity: 0.95; }
 
-/* Bloc Formation */
-.education-item { margin-bottom: 0.6rem; }
+.education-item { margin-bottom: 0.5rem; }
 .education-item strong { color: white; display: block; font-weight: 600; font-size: 0.95rem; }
 .education-item span { font-size: 0.85rem; opacity: 0.8; font-style: italic; }
 
 aside .contact-info div {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
   font-size: 0.85rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-/* Style des liens dans la colonne de gauche */
-aside a {
-  color: inherit; /* Garde la couleur blanche du texte */
-  text-decoration: none;
-  border-bottom: 1px solid var(--accent); /* Petit souligné orange discret */
-  transition: color 0.2s;
-}
-
-aside a:hover {
-  color: var(--accent); /* Devient orange au survol */
-}
-
 /* --- COLONNE DROITE (MAIN) --- */
 main {
-  /* Marges verticales réduites à 0.8cm pour gagner l'espace critique */
-  padding: 0.8cm 1.5cm 0.8cm 1.2cm;
+  /* RÉDUCTION CRITIQUE ICI : 0.8cm en haut, et surtout 0.5cm en bas */
+  padding: 0.8cm 1.5cm 0.5cm 1.2cm;
   background: var(--main-bg);
 }
 
 main h2 {
   font-size: 1.3rem;
   color: var(--sidebar-bg);
+  /* On tasse un peu les titres */
   margin: 0.8rem 0 0.5rem 0;
   border-bottom: 2px solid var(--accent);
   padding-bottom: 0.1rem;
@@ -147,8 +143,8 @@ main h2:first-of-type { margin-top: 0; }
   print-color-adjust: exact;
 }
 
-/* Compactage des jobs */
-.job { margin-bottom: 0.8rem; }
+/* RÉDUCTION CRITIQUE : Espace entre les jobs réduit à 0.65rem */
+.job { margin-bottom: 0.65rem; }
 .job:last-child { margin-bottom: 0; }
 
 .job-header {
@@ -165,7 +161,6 @@ main h2:first-of-type { margin-top: 0; }
   font-weight: 700;
 }
 
-/* Optimisation : Dates plus petites */
 .job .period {
   font-size: 0.85rem; 
   color: var(--accent);
@@ -177,7 +172,7 @@ main h2:first-of-type { margin-top: 0; }
   font-size: 0.95rem;
   font-weight: 600;
   color: #555;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.15rem;
 }
 
 .job .desc {
@@ -191,7 +186,7 @@ ul.achievements { list-style: none; padding: 0; margin: 0; }
 ul.achievements li {
   position: relative;
   padding-left: 1rem;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.1rem;
   font-size: 0.95rem;
   color: #333;
 }
@@ -208,8 +203,8 @@ ul.achievements li::before {
 .highlight-box {
   background: rgba(230, 126, 34, 0.08);
   border-left: 3px solid var(--accent);
-  padding: 0.5rem;
-  margin-top: 0.4rem;
+  padding: 0.4rem;
+  margin-top: 0.3rem;
   font-size: 0.9rem;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
@@ -220,31 +215,43 @@ ul.achievements li::before {
 @media print {
   @page { margin: 0; size: A4; }
   
+  /* Masquer le bouton de téléchargement et autres éléments marqués no-print */
+  .no-print { display: none !important; }
+
   body {
-    background: white !important; /* Force le blanc pour éviter la ligne grise */
+    background: white !important;
     padding: 0;
     margin: 0;
     display: block;
+    /* On laisse le flux normal mais on coupe ce qui dépasse vraiment */
+    overflow: hidden; 
   }
 
   .cv-container {
     width: 21cm;
-    /* On force 29.6cm pour laisser une marge de sécurité au navigateur */
-    height: 29.6cm; 
+    /* On force la hauteur pour être sûr d'aller au bout de la page */
+    height: 29.7cm; 
     box-shadow: none;
     display: grid;
     margin: 0;
     border: none;
-    overflow: hidden; /* Coupe ce qui dépasse */
+    background: white;
   }
   
-  /* Sécurité anti-coupure */
-  .job, aside section, .highlight-box { page-break-inside: avoid; }
+  /* On force la sidebar à aller jusqu'en bas */
+  aside {
+    height: 100%;
+    background-color: var(--sidebar-bg) !important;
+    -webkit-print-color-adjust: exact;
+  }
   
-  /* Cache tout sauf le CV */
+  main {
+    height: 100%;
+    background-color: white !important;
+  }
+  
+  .job, aside section, .highlight-box { page-break-inside: avoid; }
   body > *:not(.cv-container) { display: none; }
-  /* LA NOUVELLE RÈGLE MAGIQUE */
-  .no-print { display: none !important; }
 }
 
 /* --- MOBILE RULES --- */
