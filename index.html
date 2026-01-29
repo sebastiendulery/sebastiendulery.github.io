@@ -105,6 +105,18 @@ aside .contact-info div {
   gap: 0.5rem;
 }
 
+/* Style des liens dans la colonne de gauche */
+aside a {
+  color: inherit; /* Garde la couleur blanche du texte */
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent); /* Petit souligné orange discret */
+  transition: color 0.2s;
+}
+
+aside a:hover {
+  color: var(--accent); /* Devient orange au survol */
+}
+
 /* --- COLONNE DROITE (MAIN) --- */
 main {
   /* Marges verticales réduites à 0.8cm pour gagner l'espace critique */
@@ -259,12 +271,14 @@ ul.achievements li::before {
       <div class="target-role">Directeur des Systèmes d'Information</div>
     </div>
 
-    <!-- Contact -->
+   <!-- Contact -->
     <section class="contact-info">
       <div>📍 La Crèche (79)</div>
-      <div>📧 sebastien.dulery@free.fr</div>
+      <!-- Email cliquable -->
+      <div>📧 <a href="mailto:sebastien.dulery@free.fr">sebastien.dulery@free.fr</a></div>
       <div>📱 06 50 37 57 41</div>
-      <div>🌐 LinkedIn</div>
+      <!-- LinkedIn cliquable -->
+      <div>🌐 <a href="https://www.linkedin.com/in/s%C3%A9bastien-dul%C3%A9ry-21b441319" target="_blank">LinkedIn</a></div>
     </section>
 
     <!-- Bouton Téléchargement -->
