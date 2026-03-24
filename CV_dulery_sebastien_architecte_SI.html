@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV_Sebastien_Dulery_Architecte_SI</title>
+
+<meta property="og:title" content="Sébastien Duléry – Architecte Systèmes d'Information">
+<meta property="og:description" content="20 ans d'expertise sur les SI critiques de l'État. Cybersécurité, PRA/PCA & Innovation IA.">
+<meta property="og:url" content="https://sebastiendulery.github.io">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://sebastiendulery.github.io/preview.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ── Variables ─────────────────────────────────────────── */
+  :root {
+    --navy:      #1A3A5C;
+    --blue:      #2E6DA4;
+    --sky:       #B8D4F0;
+    --teal:      #1A7A5E;
+    --teal-lt:   #E6F4F0;
+    --slate:     #F0F4F8;
+    --ink:       #1C1C2E;
+    --mid:       #556070;
+    --pale:      #8898AA;
+    --white:     #FFFFFF;
+    --rule:      #D0DBE8;
+    --col-left:  260px;
+    --gap:       28px;
+  }
+
+  /* ── Reset & base ──────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 14px; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    background: #e8edf3;
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 16px 60px;
+  }
+
+  /* ── Bouton téléchargement ─────────────────────────────── */
+  .dl-bar {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+  }
+
+  .dl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .dl-btn:hover { background: var(--blue); transform: translateY(-1px); }
+  .dl-btn svg { flex-shrink: 0; }
+
+  /* ── Feuille CV ────────────────────────────────────────── */
+  .page {
+    width: 100%;
+    max-width: 900px;
+    background: var(--white);
+    box-shadow: 0 8px 40px rgba(26,58,92,0.18);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  /* ── En-tête ───────────────────────────────────────────── */
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    background: var(--navy);
+  }
+
+  .header-main {
+    padding: 32px 36px 28px;
+  }
+  .header-main h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .header-main .title-line {
+    margin-top: 6px;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: var(--sky);
+    letter-spacing: 0.02em;
+    font-style: italic;
+  }
+  .header-main .sub-line {
+    margin-top: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: rgba(184,212,240,0.65);
+    letter-spacing: 0.03em;
+  }
+
+  .header-contact {
+    background: var(--blue);
+    padding: 28px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    min-width: 200px;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-decoration: none;
+    opacity: 0.92;
+  }
+  .contact-item .icon {
+    width: 16px;
+    text-align: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  /* ── Accroche ──────────────────────────────────────────── */
+  .summary {
+    background: var(--slate);
+    padding: 18px 36px;
+    border-left: 4px solid var(--blue);
+    font-size: 0.83rem;
+    line-height: 1.7;
+    color: var(--mid);
+    font-style: italic;
+  }
+  .summary strong { color: var(--navy); font-style: normal; font-weight: 600; }
+
+  /* ── Corps principal ───────────────────────────────────── */
+  .body {
+    display: grid;
+    grid-template-columns: var(--col-left) 1fr;
+  }
+
+  /* ── Colonne gauche ────────────────────────────────────── */
+  .col-left {
+    background: var(--slate);
+    padding: 24px 20px 32px;
+    border-right: 1px solid var(--rule);
+  }
+
+  .left-section { margin-bottom: 22px; }
+
+  .left-section h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.63rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid var(--rule);
+    margin-bottom: 10px;
+  }
+
+  .skill-item {
+    margin-bottom: 6px;
+  }
+  .skill-item .skill-name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--ink);
+    display: block;
+  }
+  .skill-item .skill-sub {
+    font-size: 0.72rem;
+    color: var(--pale);
+    font-style: italic;
+    display: block;
+    margin-top: 1px;
+  }
+
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .tag {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    color: var(--mid);
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+  .tag.accent {
+    background: var(--teal-lt);
+    border-color: var(--teal);
+    color: var(--teal);
+    font-weight: 500;
+  }
+
+  .cert-item, .lang-item {
+    font-size: 0.79rem;
+    color: var(--mid);
+    padding: 2px 0;
+    padding-left: 10px;
+    position: relative;
+  }
+  .cert-item::before, .lang-item::before {
+    content: '▪';
+    position: absolute;
+    left: 0;
+    color: var(--blue);
+    font-size: 0.65rem;
+    top: 4px;
+  }
+
+  .edu-item { margin-bottom: 10px; }
+  .edu-item .edu-degree {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .edu-item .edu-school {
+    font-size: 0.73rem;
+    color: var(--pale);
+    font-style: italic;
+    margin-top: 1px;
+  }
+
+  /* ── Colonne droite ────────────────────────────────────── */
+  .col-right {
+    padding: 24px 30px 32px;
+  }
+
+  .right-section { margin-bottom: 22px; }
+
+  .right-section h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.63rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid var(--rule);
+    margin-bottom: 14px;
+  }
+
+  /* Expérience */
+  .exp { margin-bottom: 18px; }
+
+  .exp-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .exp-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+  .exp-title.highlight { color: var(--teal); }
+  .exp-title .star { color: var(--teal); margin-right: 4px; }
+
+  .exp-period {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--blue);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .exp-org {
+    font-size: 0.77rem;
+    color: var(--pale);
+    font-style: italic;
+    margin: 3px 0 7px;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    padding: 0;
+  }
+  .exp-bullets li {
+    font-size: 0.79rem;
+    color: var(--mid);
+    line-height: 1.55;
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 3px;
+  }
+  .exp-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--blue);
+    font-size: 0.65rem;
+    top: 3px;
+  }
+  .exp-bullets li strong { color: var(--ink); font-weight: 600; }
+
+  /* Atouts */
+  .atout {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    padding: 8px 10px;
+    background: var(--slate);
+    border-left: 3px solid var(--navy);
+    border-radius: 0 2px 2px 0;
+  }
+  .atout .atout-ico { font-size: 0.9rem; flex-shrink: 0; padding-top: 1px; }
+  .atout .atout-body { font-size: 0.78rem; color: var(--mid); line-height: 1.5; }
+  .atout .atout-body strong { color: var(--navy); display: block; font-weight: 600; font-size: 0.8rem; }
+
+  /* ── Print ─────────────────────────────────────────────── */
+  @media print {
+    body {
+      background: white;
+      padding: 0;
+    }
+    .dl-bar { display: none !important; }
+    .page {
+      box-shadow: none;
+      max-width: 100%;
+      width: 100%;
+    }
+    .exp, .atout, .left-section {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+  }
+
+  /* ── Responsive léger ──────────────────────────────────── */
+  @media (max-width: 640px) {
+    :root { --col-left: 100%; }
+    header { grid-template-columns: 1fr; }
+    .header-contact { min-width: unset; }
+    .body { grid-template-columns: 1fr; }
+    .col-left { border-right: none; border-bottom: 1px solid var(--rule); }
+  }
+</style>
+</head>
+<body>
+
+<!-- Bouton téléchargement (masqué à l'impression) -->
+<div class="dl-bar">
+  <a class="dl-btn" href="CV_Sebastien_Dulery_Architecte_SI.pdf" download>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
+    Télécharger le PDF
+  </a>
+</div>
+
+<div class="page">
+
+  <!-- ── En-tête ── -->
+  <header>
+    <div class="header-main">
+      <h1>Sébastien Duléry</h1>
+      <p class="title-line">Architecte SI &nbsp;·&nbsp; Expert Infrastructures Critiques &amp; Cybersécurité</p>
+      <p class="sub-line">Ingénieur Mines Paris / ENS Cachan &nbsp;·&nbsp; 20 ans d'expérience SI de l'État</p>
+    </div>
+    <div class="header-contact">
+      <span class="contact-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        La Crèche (79)
+      </span>
+      <span class="contact-item">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        06 50 37 57 41
+      </span>
+      <a class="contact-item" href="mailto:sebastien.dulery@free.fr">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        sebastien.dulery@free.fr
+      </a>
+      <a class="contact-item" href="https://www.linkedin.com/in/sébastien-duléry-21b441319" target="_blank">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        LinkedIn
+      </a>
+    </div>
+  </header>
+
+  <!-- ── Accroche ── -->
+  <div class="summary">
+    Architecte SI et expert infrastructures critiques, je conçois et opère des environnements haute disponibilité
+    pour l'État depuis 20 ans. Mon passage au Ministère de l'Agriculture
+    (<strong>2 Po Hitachi&nbsp;GAD, 66 nœuds ESXi, zéro RTO/RPO</strong>) m'a forgé une maîtrise technique rare,
+    que j'entretiens activement&nbsp;: déploiement de stacks IA génératives (<strong>LLM, RAG, OpenWebUI
+    multi-configurations</strong>), conteneurisation Docker, administration Linux.
+    Ma connaissance du SI du Ministère de l'Intérieur — ses contraintes, ses acteurs, ses enjeux de continuité —
+    est un atout direct pour des <strong>missions à fort enjeu de souveraineté et de sécurité</strong>.
+  </div>
+
+  <!-- ── Corps ── -->
+  <div class="body">
+
+    <!-- Colonne gauche -->
+    <aside class="col-left">
+
+      <div class="left-section">
+        <h3>Domaines d'expertise</h3>
+        <div class="skill-item">
+          <span class="skill-name">Infrastructures critiques</span>
+          <span class="skill-sub">Datacenters ministériels, HA/DR</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Virtualisation avancée</span>
+          <span class="skill-sub">VMware vSphere, vCenter, DRS/HA</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Stockage haute dispo</span>
+          <span class="skill-sub">Hitachi GAD, SAN, Zéro RTO/RPO</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Réseaux &amp; Sécurité SI</span>
+          <span class="skill-sub">Fortigate, segmentation, PKI, Zero Trust</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">PRA / PCA</span>
+          <span class="skill-sub">Conception &amp; tests, infras complexes</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">IA Générative (production)</span>
+          <span class="skill-sub">LLM, RAG, OpenWebUI, prompt eng.</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Conteneurisation</span>
+          <span class="skill-sub">Docker, migration VM → containers</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Open Source &amp; Linux</span>
+          <span class="skill-sub">Nextcloud, DokuWiki, admin système</span>
+        </div>
+      </div>
+
+      <div class="left-section">
+        <h3>Cybersécurité</h3>
+        <div class="tag-cloud">
+          <span class="tag accent">Architecture sécurisée</span>
+          <span class="tag accent">DMZ / segmentation</span>
+          <span class="tag">PKI ministérielle</span>
+          <span class="tag">PRA/PCA SI État</span>
+          <span class="tag">Continuité d'activité</span>
+          <span class="tag">SI MI — SIDSIC/SGCD</span>
+          <span class="tag">Post-OTE sécurisation</span>
+          <span class="tag">DR/Diffusion Restreinte</span>
+        </div>
+      </div>
+
+      <div class="left-section">
+        <h3>Certifications</h3>
+        <div class="cert-item">ITIL v3 Foundation</div>
+        <div class="cert-item">Google Prompting Essentials</div>
+      </div>
+
+      <div class="left-section">
+        <h3>Langues</h3>
+        <div class="lang-item">🇬🇧 Anglais technique — courant</div>
+        <div class="lang-item">🇩🇪 Allemand — scolaire</div>
+      </div>
+
+      <div class="left-section">
+        <h3>Formation</h3>
+        <div class="edu-item">
+          <div class="edu-degree">Mastère Spécialisé</div>
+          <div class="edu-school">Ingénierie des Processus de Production<br>Mines Paris / ENS Cachan</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Ingénieur Informatique</div>
+          <div class="edu-school">3iL Limoges</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Analyste</div>
+          <div class="edu-school">IRA de Lille</div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- Colonne droite -->
+    <main class="col-right">
+
+      <div class="right-section">
+        <h3>Expériences professionnelles</h3>
+
+        <!-- Poste actuel (Repassé en 1er) -->
+        <div class="exp">
+          <div class="exp-header">
+            <div class="exp-title">Chef du service Numérique &amp; Proximité</div>
+            <div class="exp-period">Depuis 2021</div>
+          </div>
+          <div class="exp-org">SGCD des Deux-Sèvres | Niort — Ministère de l'Intérieur</div>
+          <ul class="exp-bullets">
+            <li>Architecture et déploiement de <strong>stacks open source conteneurisées</strong> (Nextcloud, DokuWiki → Docker)</li>
+            <li>Expérimentation LLM en production : <strong>OpenWebUI multi-configurations, chaînes RAG</strong>, évaluation comparative de modèles</li>
+            <li>Pilotage de l'acculturation IA : <strong>100+ agents formés</strong>, assistants intelligents alignés feuille de route MI</li>
+            <li>Sécurisation et homogénéisation du SI départemental post-OTE (fusion 5 entités)</li>
+            <li>Management 9 agents, support 500 utilisateurs sur 12 sites</li>
+          </ul>
+        </div>
+
+        <!-- SIDSIC (En 2ème) -->
+        <div class="exp">
+          <div class="exp-header">
+            <div class="exp-title">Chef du SIDSIC 79</div>
+            <div class="exp-period">2018 – 2020</div>
+          </div>
+          <div class="exp-org">Préfecture des Deux-Sèvres | Niort — Ministère de l'Intérieur</div>
+          <ul class="exp-bullets">
+            <li>Encadrement de 12 agents — maintien des services critiques de l'État</li>
+            <li>Pilotage projet ToIP et modernisation des infrastructures d'accueil numérique</li>
+            <li>Gestion de crise : continuité opérationnelle sur SI préfectoral</li>
+          </ul>
+        </div>
+
+        <!-- Poste phare (En 3ème mais mis en valeur) -->
+        <div class="exp">
+          <div class="exp-header">
+            <div class="exp-title highlight"><span class="star">★</span>Architecte Infrastructures Critiques</div>
+            <div class="exp-period">2015 – 2018</div>
+          </div>
+          <div class="exp-org">Ministère de l'Agriculture | Toulouse — Datacenter ministériel</div>
+          <ul class="exp-bullets">
+            <li>Administration et évolution d'un socle <strong>VMware vSphere : 66 nœuds ESXi, 8 clusters HA/DRS</strong></li>
+            <li>Stockage <strong>Hitachi GAD — 2 Po</strong>, réplication synchrone bi-site, <strong>zéro RTO/RPO</strong></li>
+            <li>Architecture réseau Est-Ouest : segmentation (Fortigate, Brocade), MCO de la <strong>PKI ministérielle</strong></li>
+            <li>Maintien en condition opérationnelle des <strong>PRA/PCA</strong> multi-sites</li>
+            <li>Exploitation en environnement sensible (normes <strong>ANSSI, Diffusion Restreinte</strong>)</li>
+          </ul>
+        </div>
+
+        <!-- Agri Guyane/Limousin (En 4ème) -->
+        <div class="exp">
+          <div class="exp-header">
+            <div class="exp-title">Responsable SI &amp; Chef de Projet</div>
+            <div class="exp-period">2005 – 2015</div>
+          </div>
+          <div class="exp-org">DAF Guyane / DRAAF Limousin — Ministère de l'Agriculture</div>
+          <ul class="exp-bullets">
+            <li>Administration des SI régionaux — 100 agents, coordination inter-services</li>
+            <li>Intérim Secrétaire Général (Guyane, 6 mois) : RH, budget, logistique</li>
+            <li>Direction de projet rénovation immobilière — 1,6 M€</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Atouts -->
+      <div class="right-section">
+        <h3>Positionnement &amp; valeur ajoutée</h3>
+
+        <div class="atout">
+          <div class="atout-ico">🔒</div>
+          <div class="atout-body">
+            <strong>Maîtrise experte du SI Ministère de l'Intérieur</strong>
+            8 ans en environnement préfectoral/SGCD — acteurs, contraintes, enjeux de souveraineté directement transposables en contexte cybersécurité.
+          </div>
+        </div>
+
+        <div class="atout">
+          <div class="atout-ico">⚙️</div>
+          <div class="atout-body">
+            <strong>Pratique technique entretenue</strong>
+            LLM, Docker, Linux, open source : aucune rupture avec le terrain malgré les responsabilités managériales.
+          </div>
+        </div>
+
+        <div class="atout">
+          <div class="atout-ico">🏗️</div>
+          <div class="atout-body">
+            <strong>Profil datacenter ministériel haute criticité</strong>
+            Hitachi GAD, vSphere 66 nœuds, PRA/PCA — expertise directement applicable à des infrastructures souveraines exigeantes.
+          </div>
+        </div>
+
+        <div class="atout">
+          <div class="atout-ico">🧠</div>
+          <div class="atout-body">
+            <strong>IA générative appliquée — au-delà de la veille</strong>
+            Déploiement réel d'OpenWebUI, RAG, évaluation de modèles en contexte professionnel et personnel.
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div><!-- /.body -->
+
+</div><!-- /.page -->
+
+</body>
+</html>
