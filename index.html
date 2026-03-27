@@ -28,7 +28,7 @@
     --pale:      #8898AA;
     --white:     #FFFFFF;
     --rule:      #D0DBE8;
-    --col-left:  260px;
+    --col-left:  280px; /* Élargi pour la police plus grande */
     --gap:       28px;
   }
 
@@ -52,7 +52,7 @@
   /* ── Bouton téléchargement ─────────────────────────────── */
   .dl-bar {
     width: 100%;
-    max-width: 900px;
+    max-width: 950px;
     display: flex;
     justify-content: flex-end;
     margin-bottom: 16px;
@@ -65,7 +65,7 @@
     background: var(--navy);
     color: var(--white);
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.82rem;
+    font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -82,7 +82,7 @@
   /* ── Feuille CV ────────────────────────────────────────── */
   .page {
     width: 100%;
-    max-width: 900px;
+    max-width: 950px; /* Élargi pour le confort de lecture */
     background: var(--white);
     box-shadow: 0 8px 40px rgba(26,58,92,0.18);
     border-radius: 2px;
@@ -101,23 +101,23 @@
   }
   .header-main h1 {
     font-family: 'DM Serif Display', serif;
-    font-size: 2.4rem;
+    font-size: 2.6rem; /* Agrandit le nom */
     color: var(--white);
     line-height: 1.1;
     letter-spacing: -0.01em;
   }
   .header-main .title-line {
-    margin-top: 6px;
-    font-size: 0.88rem;
+    margin-top: 8px;
+    font-size: 1rem; /* Agrandit le sous-titre */
     font-weight: 400;
     color: var(--sky);
     letter-spacing: 0.02em;
     font-style: italic;
   }
   .header-main .sub-line {
-    margin-top: 4px;
+    margin-top: 6px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
+    font-size: 0.82rem; /* Agrandit les diplômes */
     color: rgba(184,212,240,0.65);
     letter-spacing: 0.03em;
   }
@@ -128,32 +128,32 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 8px;
-    min-width: 200px;
+    gap: 10px;
+    min-width: 220px;
   }
   .contact-item {
     display: flex;
     align-items: center;
     gap: 9px;
     color: var(--white);
-    font-size: 0.8rem;
+    font-size: 0.9rem; /* Agrandit les infos de contact */
     font-weight: 400;
     text-decoration: none;
     opacity: 0.92;
   }
   .contact-item .icon {
-    width: 16px;
+    width: 18px;
     text-align: center;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     flex-shrink: 0;
   }
 
   /* ── Accroche ──────────────────────────────────────────── */
   .summary {
     background: var(--slate);
-    padding: 18px 36px;
+    padding: 20px 36px;
     border-left: 4px solid var(--blue);
-    font-size: 0.83rem;
+    font-size: 0.95rem; /* Plus lisible */
     line-height: 1.7;
     color: var(--mid);
     font-style: italic;
@@ -169,52 +169,52 @@
   /* ── Colonne gauche ────────────────────────────────────── */
   .col-left {
     background: var(--slate);
-    padding: 24px 20px 32px;
+    padding: 26px 24px 32px;
     border-right: 1px solid var(--rule);
   }
 
-  .left-section { margin-bottom: 22px; }
+  .left-section { margin-bottom: 24px; }
 
   .left-section h3 {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.63rem;
+    font-size: 0.75rem; /* Titres de section plus gros */
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--blue);
     padding-bottom: 6px;
     border-bottom: 1.5px solid var(--rule);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   .skill-item {
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
   .skill-item .skill-name {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: var(--ink);
     display: block;
   }
   .skill-item .skill-sub {
-    font-size: 0.72rem;
+    font-size: 0.82rem;
     color: var(--pale);
     font-style: italic;
     display: block;
-    margin-top: 1px;
+    margin-top: 2px;
   }
 
   .tag-cloud {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 6px;
   }
   .tag {
     background: var(--white);
     border: 1px solid var(--rule);
     color: var(--mid);
-    font-size: 0.7rem;
-    padding: 2px 8px;
+    font-size: 0.78rem;
+    padding: 3px 8px;
     border-radius: 2px;
   }
   .tag.accent {
@@ -224,56 +224,56 @@
     font-weight: 500;
   }
 
-  .cert-item, .lang-item {
-    font-size: 0.79rem;
+  .cert-item {
+    font-size: 0.88rem;
     color: var(--mid);
-    padding: 2px 0;
-    padding-left: 10px;
+    padding: 3px 0;
+    padding-left: 12px;
     position: relative;
   }
-  .cert-item::before, .lang-item::before {
+  .cert-item::before {
     content: '▪';
     position: absolute;
     left: 0;
     color: var(--blue);
-    font-size: 0.65rem;
-    top: 4px;
+    font-size: 0.75rem;
+    top: 5px;
   }
 
-  .edu-item { margin-bottom: 10px; }
+  .edu-item { margin-bottom: 12px; }
   .edu-item .edu-degree {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--navy);
   }
   .edu-item .edu-school {
-    font-size: 0.73rem;
+    font-size: 0.82rem;
     color: var(--pale);
     font-style: italic;
-    margin-top: 1px;
+    margin-top: 2px;
   }
 
   /* ── Colonne droite ────────────────────────────────────── */
   .col-right {
-    padding: 24px 30px 32px;
+    padding: 26px 36px 32px;
   }
 
-  .right-section { margin-bottom: 22px; }
+  .right-section { margin-bottom: 24px; }
 
   .right-section h3 {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.63rem;
+    font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--blue);
     padding-bottom: 6px;
     border-bottom: 1.5px solid var(--rule);
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
 
   /* Expérience */
-  .exp { margin-bottom: 18px; }
+  .exp { margin-bottom: 22px; }
 
   .exp-header {
     display: flex;
@@ -284,7 +284,7 @@
   }
   .exp-title {
     font-family: 'DM Serif Display', serif;
-    font-size: 1rem;
+    font-size: 1.1rem; /* Titres de postes plus gros */
     color: var(--navy);
     line-height: 1.2;
   }
@@ -293,17 +293,17 @@
 
   .exp-period {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
+    font-size: 0.78rem;
     color: var(--blue);
     white-space: nowrap;
     flex-shrink: 0;
   }
 
   .exp-org {
-    font-size: 0.77rem;
+    font-size: 0.88rem;
     color: var(--pale);
     font-style: italic;
-    margin: 3px 0 7px;
+    margin: 4px 0 8px;
   }
 
   .exp-bullets {
@@ -311,19 +311,19 @@
     padding: 0;
   }
   .exp-bullets li {
-    font-size: 0.79rem;
+    font-size: 0.88rem; /* Puces d'expérience bien lisibles */
     color: var(--mid);
     line-height: 1.55;
-    padding-left: 16px;
+    padding-left: 18px;
     position: relative;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
   }
   .exp-bullets li::before {
     content: '▸';
     position: absolute;
     left: 0;
     color: var(--blue);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     top: 3px;
   }
   .exp-bullets li strong { color: var(--ink); font-weight: 600; }
@@ -331,16 +331,16 @@
   /* Atouts */
   .atout {
     display: flex;
-    gap: 10px;
-    margin-bottom: 8px;
-    padding: 8px 10px;
+    gap: 12px;
+    margin-bottom: 10px;
+    padding: 10px 12px;
     background: var(--slate);
     border-left: 3px solid var(--navy);
     border-radius: 0 2px 2px 0;
   }
-  .atout .atout-ico { font-size: 0.9rem; flex-shrink: 0; padding-top: 1px; }
-  .atout .atout-body { font-size: 0.78rem; color: var(--mid); line-height: 1.5; }
-  .atout .atout-body strong { color: var(--navy); display: block; font-weight: 600; font-size: 0.8rem; }
+  .atout .atout-ico { font-size: 1.1rem; flex-shrink: 0; padding-top: 1px; }
+  .atout .atout-body { font-size: 0.88rem; color: var(--mid); line-height: 1.5; }
+  .atout .atout-body strong { color: var(--navy); display: block; font-weight: 600; font-size: 0.92rem; margin-bottom: 2px; }
 
   /* ── Print ─────────────────────────────────────────────── */
   @media print {
@@ -488,8 +488,9 @@
 
       <div class="left-section">
         <h3>Langues</h3>
-        <div class="lang-item">🇬🇧 Anglais technique — courant</div>
-        <div class="lang-item">🇩🇪 Allemand — scolaire</div>
+        <!-- Puces customisées pour l'affichage large -->
+        <div style="font-size: 0.88rem; color: var(--mid); padding: 3px 0; padding-left: 12px;">🇬🇧 Anglais technique — courant</div>
+        <div style="font-size: 0.88rem; color: var(--mid); padding: 3px 0; padding-left: 12px;">🇩🇪 Allemand — scolaire</div>
       </div>
 
       <div class="left-section">
@@ -542,7 +543,7 @@
           <ul class="exp-bullets">
             <li>Encadrement de 12 agents — maintien des services critiques de l'État</li>
             <li>Pilotage projet ToIP et modernisation des infrastructures d'accueil numérique</li>
-            <li>Gestion de crise : continuité opérationnelle sur SI préfectoral</li>
+            <li>Gestion de crise : continuity opérationnelle sur SI préfectoral</li>
           </ul>
         </div>
 
